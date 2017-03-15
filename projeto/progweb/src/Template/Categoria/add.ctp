@@ -3,20 +3,15 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Categoria'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-<div class="categoria form large-9 medium-8 columns content">
+<div class="categoria form large-9 medium-8 columns content form-group">
     <?= $this->Form->create($categorium) ?>
     <fieldset>
-        <legend><?= __('Add Categorium') ?></legend>
+        <legend><?= __('Adicionar Categoria') ?></legend>
         <?php
-            echo $this->Form->input('nome');
+            echo $this->Form->input('nome', ['label' => 'Nome']);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <hr />
+    <?= $this->Form->button(__('Salvar'), ['class' => 'btn btn-success']) ?>
     <?= $this->Form->end() ?>
 </div>

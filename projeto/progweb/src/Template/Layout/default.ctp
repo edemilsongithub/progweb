@@ -72,7 +72,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="/"><img src="images/home/logo.png" alt="" /></a>
+							<a href="/"><img src="/images/home/logo.png" alt="" /></a>
 						</div>						
 					</div>
 					<div class="col-sm-8">

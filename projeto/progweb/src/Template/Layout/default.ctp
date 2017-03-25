@@ -13,7 +13,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'Toys - Locação de Produtos Infantis';
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,8 +21,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
+        <?= $this->fetch('title') ?> - 
+        <?= $cakeDescription ?>
     </title>
     <?= $this->Html->meta('icon') ?>
 
@@ -75,7 +75,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="/"><img src="/images/home/logo.png" alt="" /></a>
+							<a href="/"><img src="/img/toys1.jpg" width="150px" alt="" /></a>
 						</div>						
 					</div>
 					<div class="col-sm-8">

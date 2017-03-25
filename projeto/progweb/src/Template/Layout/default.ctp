@@ -132,7 +132,7 @@ $cakeDescription = 'Toys - Locação de Produtos Infantis';
 						<h2 class="title text-center">Produtos</h2>
 
                         <?= $this->Flash->render() ?>
-                        <div class="container clearfix">
+                        <div class="container-fluid clearfix">
                             <?= $this->fetch('content') ?>
                         </div>
 						

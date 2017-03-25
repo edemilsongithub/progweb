@@ -3,24 +3,34 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Produto'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
 <div class="produto form large-9 medium-8 columns content">
     <?= $this->Form->create($produto) ?>
     <fieldset>
-        <legend><?= __('Add Produto') ?></legend>
+        <legend><?= __('Adicionar Produto') ?></legend>
         <?php
+            echo "<div class=\"form-group\">";
             echo $this->Form->input('nome');
+            echo "</div><div class=\"form-group\">";
             echo $this->Form->input('descricao');
+            echo "</div><div class=\"form-group\">";
             echo $this->Form->input('faixa_etaria');
+            echo "</div><div class=\"form-group\">";
             echo $this->Form->input('preco_dia');
+            echo "</div><div class=\"form-group\">";
             echo $this->Form->input('qnt');
-            echo $this->Form->input('id_categoria');
+            echo "</div>";
         ?>
+        <div class="form-group">
+            <label for="id-categoria">Categoria</label>
+            
+            <select name="id_categoria" id="id-categoria">
+            
+            <?php foreach ($categorias as $categorium): ?>
+                    <option value="<?= $categorium->id ?>"><?= h($categorium->nome) ?></option>
+                <?php endforeach; ?>
+
+            </select>
+        </div>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>

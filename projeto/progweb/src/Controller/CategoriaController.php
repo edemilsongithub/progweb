@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Categoria Controller
@@ -37,7 +38,11 @@ class CategoriaController extends AppController
             'contain' => []
         ]);
 
+        $produtos = TableRegistry::get('Produto');
+        $produtos = $produtos->find('byCategoriaId', ['categoria_id' => $id]);
+
         $this->set('categorium', $categorium);
+        $this->set('produtos', $produtos);
         $this->set('_serialize', ['categorium']);
     }
 

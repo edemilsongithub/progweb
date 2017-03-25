@@ -71,4 +71,13 @@ class ProdutoTable extends Table
 
         return $validator;
     }
+
+    /**
+     * Encontra os produtos por um id de categoria.
+     */
+    public function findByCategoriaId(Query $query, array $options)
+    {
+        $categoria = $options['categoria_id'];
+        return $query->where(['id_categoria' => $categoria]);
+    }
 }

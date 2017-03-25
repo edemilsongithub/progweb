@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 /**
  * Application Controller
@@ -65,5 +66,9 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+
+        $categorias = TableRegistry::get('categoria')->find('all');
+
+        $this->set('categorias', $categorias);
     }
 }

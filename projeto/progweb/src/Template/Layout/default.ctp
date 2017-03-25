@@ -98,9 +98,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 						<h2>Categorias</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Carrinhos de Bebe</a></h4>
-								</div>
+
+								 <?php foreach ($categorias as $categorium): ?>
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<?= $this->Html->link(h($categorium->nome), ['controller' => 'Categoria', 'action' => 'view', $categorium->id]) ?>
+											</h4>
+										</div>
+									<?php endforeach; ?>
+
 							</div>
                             <br />
                             <a href="/categoria/add" class="btn btn-default btn-block">Adicionar Categoria</a>

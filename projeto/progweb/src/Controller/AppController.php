@@ -68,7 +68,9 @@ class AppController extends Controller
         }
 
         $categorias = TableRegistry::get('categoria')->find('all');
+        $usuario = TableRegistry::get('Cliente')->get(1);
 
         $this->set('categorias', $categorias);
+        $this->set('usuario', $usuario);
     }
 }

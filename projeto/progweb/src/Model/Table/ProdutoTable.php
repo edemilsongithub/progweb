@@ -80,4 +80,15 @@ class ProdutoTable extends Table
         $categoria = $options['categoria_id'];
         return $query->where(['id_categoria' => $categoria]);
     }
+
+    /**
+    * Método que registra a locação de um produto
+    */
+    public function alugado($id)
+    {
+        $produto = $this->get($id);
+        $produto->set('qnt', $produto->qnt - 1);
+        
+        $this->save($produto);
+    }
 }

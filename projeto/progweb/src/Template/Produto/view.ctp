@@ -24,7 +24,7 @@
 								<p><b>Faixa Etária:</b> <?= h($produto->faixa_etaria) ?></p>
 
                                 <span>
-                                    <a href="#" class="btn btn-default cart">
+                                    <a href="/aluguel/add/<?= $produto->id ?>" class="btn btn-default cart">
 										<i class="fa fa-shopping-cart"></i>
 										Alugar
                                     </a>

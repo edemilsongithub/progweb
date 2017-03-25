@@ -56,18 +56,18 @@ class AluguelTable extends Table
             ->allowEmpty('id_produto');
 
         $validator
-            ->dateTime('data_inicio')
+            ->date('data_inicio')
             ->requirePresence('data_inicio', 'create')
             ->notEmpty('data_inicio');
 
         $validator
-            ->dateTime('data_fim')
+            ->date('data_fim')
             ->requirePresence('data_fim', 'create')
             ->notEmpty('data_fim');
 
         $validator
             ->decimal('preco_aluguel')
-            ->allowEmpty('preco_aluguel');
+            ->notEmpty('preco_aluguel');
 
         return $validator;
     }

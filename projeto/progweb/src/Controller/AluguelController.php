@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Aluguel Controller
@@ -46,19 +47,30 @@ class AluguelController extends AppController
      *
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($id = null)
     {
+        if($id == null)
+        {
+            $this->Flash->error(__('Produto com id nulo não pode ser alugado.'));
+        }
+
+        $produto = TableRegistry::get('Produto')->get($id);
+
         $aluguel = $this->Aluguel->newEntity();
         if ($this->request->is('post')) {
             $aluguel = $this->Aluguel->patchEntity($aluguel, $this->request->data);
             if ($this->Aluguel->save($aluguel)) {
+
+                TableRegistry::get('Produto')->alugado($id);
+
                 $this->Flash->success(__('The aluguel has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The aluguel could not be saved. Please, try again.'));
         }
-        $this->set(compact('aluguel'));
+
+        $this->set(compact('aluguel', 'produto'));
         $this->set('_serialize', ['aluguel']);
     }
 

@@ -106,4 +106,13 @@ class ClienteController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    /**
+    * Método para o usuário sair do sistema
+    */
+    public function sair()
+    {
+        $usuario = null;
+        return $this->redirect(['controller' => 'Produto', 'action' => 'index']);
+    }
 }

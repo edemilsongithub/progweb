@@ -78,9 +78,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Aluguéis</a></li>
+								<?php if($usuario) : ?>
+
+								<li><a href="/aluguel"><i class="fa fa-shopping-cart"></i> Aluguéis</a></li>
 								<li><a href="#"><i class="fa fa-user"></i> José da Silva</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="/cliente/sair"><i class="fa fa-sign-out"></i> Sair</a></li>
+
+								<?php else: ?>
+
+								<li><a href="/cliente/entrar"><i class="fa fa-lock"></i> Entrar</a></li>
+
+								<?php endif; ?>
 							</ul>
 						</div>
 					</div>

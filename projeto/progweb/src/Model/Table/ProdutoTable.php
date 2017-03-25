@@ -78,7 +78,9 @@ class ProdutoTable extends Table
     public function findByCategoriaId(Query $query, array $options)
     {
         $categoria = $options['categoria_id'];
-        return $query->where(['id_categoria' => $categoria]);
+        return $query
+                    ->where(['id_categoria' => $categoria])
+                    ->order(['qnt' => 'DESC']);
     }
 
     /**

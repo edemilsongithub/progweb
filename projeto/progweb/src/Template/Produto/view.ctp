@@ -23,12 +23,18 @@
 								</span>
 								<p><b>Faixa Etária:</b> <?= h($produto->faixa_etaria) ?></p>
 
-                                <span>
+                                <?php 	if($produto->qnt > 0) : ?>
+								<span>
                                     <a href="/aluguel/add/<?= $produto->id ?>" class="btn btn-default cart">
 										<i class="fa fa-shopping-cart"></i>
 										Alugar
                                     </a>
                                 </span>
+								<?php else: ?>
+
+								<span>Não há produtos em estoque :c</span>
+
+								<?php endif; ?>
 								<a href=""><img src="/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
 							</div><!--/product-information-->
 						</div>

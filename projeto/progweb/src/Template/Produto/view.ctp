@@ -1,44 +1,33 @@
-<?php
-/**
-  * @var \App\View\AppView $this
-  */
-?>
+<div class="container-fluid"><!--product-details-->
+	<div class="row">
+		<div class="product-information"><!--/product-information-->
+			<img src="/images/product-details/new.jpg" class="newarrival" alt="" />
+			<h2><?= h($produto->nome) ?></h2>
+			<p>Web ID: <?= h($produto->id) ?></p>
+			<span>
+				<span><?= $this->Number->format($produto->preco_dia) ?> R$ / dia</span>
+                <br />
+				<label>Quantidade:</label>
+				<input type="text" value="<?= $this->Number->format($produto->qnt) ?>" />
+			</span>
+			<p><b>Faixa Etária:</b> <?= h($produto->faixa_etaria) ?></p>
 
-<div class="product-details"><!--product-details-->
-						<div class="col-sm-5">
-							<div class="view-product">
-								<img src="/images/product-details/1.jpg" alt="" />
-							</div>
-						</div>
-						<div class="col-sm-7">
-							<div class="product-information"><!--/product-information-->
-								<img src="/images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2><?= h($produto->nome) ?></h2>
-								<p>Web ID: <?= h($produto->id) ?></p>
-								<span>
-									<span><?= $this->Number->format($produto->preco_dia) ?> R$ / dia</span>
-                                    <br />
-									<label>Quantidade:</label>
-									<input type="text" value="<?= $this->Number->format($produto->qnt) ?>" />
-								</span>
-								<p><b>Faixa Etária:</b> <?= h($produto->faixa_etaria) ?></p>
+            <?php 	if($produto->qnt > 0) : ?>
+			<span>
+                <a href="/aluguel/add/<?= $produto->id ?>" class="btn btn-default cart">
+					<i class="fa fa-shopping-cart"></i>
+					Alugar
+                </a>
+            </span>
+			<?php else: ?>
 
-                                <?php 	if($produto->qnt > 0) : ?>
-								<span>
-                                    <a href="/aluguel/add/<?= $produto->id ?>" class="btn btn-default cart">
-										<i class="fa fa-shopping-cart"></i>
-										Alugar
-                                    </a>
-                                </span>
-								<?php else: ?>
+			<span>Não há produtos em estoque :c</span>
 
-								<span>Não há produtos em estoque :c</span>
-
-								<?php endif; ?>
-								<a href=""><img src="/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
-							</div><!--/product-information-->
-						</div>
-					</div><!--/product-details-->
+			<?php endif; ?>
+			<a href=""><img src="/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+		</div><!--/product-information-->
+	</div>
+</div><!--/product-details-->
 
 
 <div class="produto view large-9 medium-8 columns content">

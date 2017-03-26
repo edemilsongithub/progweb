@@ -30,9 +30,25 @@ if (Configure::read('debug')):
 
     $this->end();
 endif;
-?>
-<h2><?= h($message) ?></h2>
-<p class="error">
-    <strong><?= __d('cake', 'Error') ?>: </strong>
-    <?= __d('cake', 'The requested address {0} was not found on this server.', "<strong>'{$url}'</strong>") ?>
-</p>
+?> 
+
+<div class="container text-center">
+    <div class="content-404">
+        <img src="/images/404/404.png" class="img-responsive" alt="" />
+        <h1><b>OPPS!</b></h1>
+        <p><?= __d('cake', 'A página {0} não pode ser encontrada.', "<strong>'{$url}'</strong>") ?></p>
+        <h2><a href="/">Ir ao início</a></h2>
+    </div>
+</div>
+
+<style type="text/css">
+    #header {display: none;}
+</style>
+
+
+<script src="/js/jquery.js"></script>
+<script src="/js/price-range.js"></script>
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.prettyPhoto.js"></script>
+<script src="/js/main.js"></script>

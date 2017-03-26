@@ -3,30 +3,22 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Aluguel'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
 <div class="aluguel index large-9 medium-8 columns content">
     <h3><?= __('Aluguel') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('id_cliente') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('id_produto') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('data_inicio') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('data_fim') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('preco_aluguel') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($aluguel as $aluguel): ?>
             <tr>
-                <td><?= $this->Number->format($aluguel->id) ?></td>
                 <td><?= $this->Number->format($aluguel->id_cliente) ?></td>
                 <td><?= $this->Number->format($aluguel->id_produto) ?></td>
                 <td><?= h($aluguel->data_inicio) ?></td>

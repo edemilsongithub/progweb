@@ -3,41 +3,39 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Aluguel'), ['action' => 'edit', $aluguel->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Aluguel'), ['action' => 'delete', $aluguel->id], ['confirm' => __('Are you sure you want to delete # {0}?', $aluguel->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Aluguel'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Aluguel'), ['action' => 'add']) ?> </li>
-    </ul>
+
+<nav>
+    <span>
+        <?= $this->Html->link(__(' Voltar'), ['action' => 'index'], ['class' => 'fa fa-arrow-left btn btn-default']) ?> 
+    </span>
 </nav>
+
 <div class="aluguel view large-9 medium-8 columns content">
-    <h3><?= h($aluguel->id) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($aluguel->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id Cliente') ?></th>
-            <td><?= $this->Number->format($aluguel->id_cliente) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id Produto') ?></th>
-            <td><?= $this->Number->format($aluguel->id_produto) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Preco Aluguel') ?></th>
-            <td><?= $this->Number->format($aluguel->preco_aluguel) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Data Inicio') ?></th>
-            <td><?= h($aluguel->data_inicio) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Data Fim') ?></th>
-            <td><?= h($aluguel->data_fim) ?></td>
-        </tr>
-    </table>
+    <h3><?= h($aluguel->produto->nome) ?></h3>
+    <hr>
+    <h4>Dados do Cliente</h4>
+    <hr>
+
+    <p><strong>Cliente ID :</strong> <?= $aluguel->cliente->id ?></p>
+    <p><strong>Nome :</strong> <?= $aluguel->cliente->nome ?></p>
+    <p><strong>E-mail :</strong> <?= $aluguel->cliente->email ?></p>
+    <p><strong>Endereço :</strong> <?= $aluguel->cliente->endereco ?></p>
+
+    <hr>
+    <h4>Dados do Produto</h4>
+    <hr>
+    <p><strong>Produto ID :</strong> <?= $aluguel->produto->id ?></p>
+    <p><strong>Nome :</strong> <?= $aluguel->produto->nome ?></p>
+    <p><strong>Descrição :</strong> <?= $aluguel->produto->descricao ?></p>
+    <p><strong>Faixa Etaria :</strong> <?= $aluguel->produto->faixa_etaria ?></p>
+    <p><strong>Categoria :</strong> <?= $aluguel->produto->categorium->nome ?></p>
+
+    <hr>
+    <h4>Dados da Locação</h4>
+    <hr>    
+    <p><strong>Aluguel ID :</strong> <?= $aluguel->id ?></p>
+    <p><strong>Data de Locação :</strong> <?= $aluguel->data_inicio ?></p>
+    <p><strong>Data de Devolução :</strong> <?= $aluguel->data_fim ?></p>
+    <p><strong>Preço :</strong> R$<?= $aluguel->preco_aluguel ?>,00</p>
+
 </div>

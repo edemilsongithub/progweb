@@ -70,6 +70,7 @@ class ClienteController extends AppController
         ]);
 
         $this->set('cliente', $cliente);
+        $this->set('titulo', 'Seus Dados');
         $this->set('_serialize', ['cliente']);
     }
 
@@ -119,6 +120,7 @@ class ClienteController extends AppController
         }
         $this->set(compact('cliente'));
         $this->set('_serialize', ['cliente']);
+        $this->set('titulo', 'Seus Dados');
     }
 
     /**

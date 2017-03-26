@@ -33,6 +33,12 @@ class ProdutoTable extends Table
         $this->table('produto');
         $this->displayField('id');
         $this->primaryKey('id');
+
+        $this->belongsTo(
+            'Categoria', [
+                'foreignKey' => 'id_categoria'
+            ]            
+        );
     }
 
     /**

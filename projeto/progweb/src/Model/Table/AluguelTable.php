@@ -39,6 +39,12 @@ class AluguelTable extends Table
                 'foreignKey' => 'id_produto'
             ]            
         );
+
+        $this->belongsTo(
+            'Cliente', [
+                'foreignKey' => 'id_cliente'
+            ]            
+        );
     }
 
     /**

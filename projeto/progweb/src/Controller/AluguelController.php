@@ -41,13 +41,13 @@ class AluguelController extends AppController
     public function view($id = null)
     {
         $aluguel = $this->Aluguel->get($id, [
-            'contain' => []
+            'contain' => ['Produto', 'Cliente', 'Produto.Categoria']
         ]);
 
         $this->set('aluguel', $aluguel);
         $this->set('_serialize', ['aluguel']);
 
-        $this->set('titulo', '');
+        $this->set('titulo', 'Dados da Locação');
     }
 
     /**

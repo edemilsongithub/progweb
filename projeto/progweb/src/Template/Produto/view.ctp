@@ -37,6 +37,9 @@
     </div>
 </div>
 
+
+<?php if($usuario != null) : ?>
+
 <hr />
     
 
@@ -47,6 +50,8 @@
         <?= $this->Html->link(__('Adicionar Produto'), ['action' => 'add'], ['class' => 'btn btn-default']) ?> 
     </span>
 </nav>
+
+<?php endif; ?>
 
 
 <br />

@@ -121,8 +121,12 @@ $cakeDescription = 'Toys - Locação de Produtos Infantis';
 									<?php endforeach; ?>
 
 							</div>
+
+							<?php if($usuario != null) : ?>
                             <br />
                             <a href="/categoria/add" class="btn btn-default btn-block">Adicionar Categoria</a>
+                        	<?php endif; ?>
+
 						</div><!--/category-products-->				
 						
 					

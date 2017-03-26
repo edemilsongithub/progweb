@@ -19,7 +19,11 @@ class AluguelController extends AppController
      */
     public function index()
     {
-        $aluguel = $this->paginate($this->Aluguel);
+        $aluguel = $this->paginate(
+            $this
+                ->Aluguel
+                ->find('alugueisAtivosPorClienteId', ['id_cliente' => $this->Auth->user()['id']])
+        );
 
         $this->set(compact('aluguel'));
         $this->set('_serialize', ['aluguel']);

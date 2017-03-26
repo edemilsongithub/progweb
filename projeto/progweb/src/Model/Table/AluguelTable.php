@@ -33,6 +33,12 @@ class AluguelTable extends Table
         $this->table('aluguel');
         $this->displayField('id');
         $this->primaryKey('id');
+
+        $this->belongsTo(
+            'Produto', [
+                'foreignKey' => 'id_produto'
+            ]            
+        );
     }
 
     /**
@@ -71,4 +77,25 @@ class AluguelTable extends Table
 
         return $validator;
     }
+
+    /**
+     * Método que busca alugéis ativos passsando o id do usuário
+     */
+     public function findAlugueisAtivosPorClienteId(Query $query, array $options)
+    {
+
+        $id_cliente = $options['id_cliente'];
+
+        $query
+            ->contain(['Produto'])
+            ->where([
+                'id_cliente' => $id_cliente,
+                'data_fim >' => date('Y-m-d H:i:s'),
+            ])
+            ->order(
+                ['data_fim' => 'ASC']
+            );
+
+        return $query;
+    } 
 }

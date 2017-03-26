@@ -27,6 +27,8 @@ class AluguelController extends AppController
 
         $this->set(compact('aluguel'));
         $this->set('_serialize', ['aluguel']);
+
+        $this->set('titulo', 'Aluguéis Ativos');
     }
 
     /**
@@ -44,6 +46,8 @@ class AluguelController extends AppController
 
         $this->set('aluguel', $aluguel);
         $this->set('_serialize', ['aluguel']);
+
+        $this->set('titulo', '');
     }
 
     /**
@@ -76,6 +80,8 @@ class AluguelController extends AppController
 
         $this->set(compact('aluguel', 'produto'));
         $this->set('_serialize', ['aluguel']);
+
+        $this->set('titulo', 'Realizar Locação');
     }
 
     /**

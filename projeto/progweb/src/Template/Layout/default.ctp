@@ -131,7 +131,7 @@ $cakeDescription = 'Toys - Locação de Produtos Infantis';
 				
 				<div class="col-sm-9 padding-right">
 					<div class="container-fluid"><!--features_items-->
-						<h2 class="title text-center">Produtos</h2>
+						<h2 class="title text-center"><?= $titulo ?></h2>
 
                         <?= $this->Flash->render() ?>
                         <div class="container-fluid clearfix">

@@ -52,7 +52,7 @@ class ClienteTable extends Table
             ->notEmpty('nome');
 
         $validator
-            ->dateTime('data_nasc')
+            ->date('data_nasc')
             ->requirePresence('data_nasc', 'create')
             ->notEmpty('data_nasc');
 

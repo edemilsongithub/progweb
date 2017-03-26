@@ -52,6 +52,8 @@ class CategoriaController extends AppController
         $this->set('categorium', $categorium);
         $this->set('produtos', $produtos);
         $this->set('_serialize', ['categorium']);
+
+        $this->set('titulo', $categorium->nome);
     }
 
     /**

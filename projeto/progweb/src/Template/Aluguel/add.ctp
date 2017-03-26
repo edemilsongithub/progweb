@@ -4,19 +4,8 @@
   */
 ?>
 
-<style>
-h2.title.text-center {
-    display: none;
-}
-</style>
-
 
 <section id="cart_items">
-
-
-<div class="review-payment">
-    <h2><?= __('Realizar Locação') ?></h2>
-</div>
 
 <div class="aluguel form large-9 medium-8 columns content">
     <?= $this->Form->create($aluguel, ['class' => 'form-horizontal']) ?>

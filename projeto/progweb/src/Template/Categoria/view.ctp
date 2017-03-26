@@ -4,17 +4,6 @@
   */
 ?>
 
-<h3><?= $categorium->nome ?></h3>
-
-<?php
-
-if(!$produtos)
-{
-    echo "<p>Não há produtos disponíveis para esta categoria :c</p>";
-}
-
-?>
-
 <?php foreach ($produtos as $produto): ?>
 <div class="col-md-4">
     <div class="product-image-wrapper">

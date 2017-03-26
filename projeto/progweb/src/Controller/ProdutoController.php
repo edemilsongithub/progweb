@@ -17,6 +17,8 @@ class ProdutoController extends AppController
     public function beforeFilter(Event $event) {
         parent::beforeFilter($event);
         $this->Auth->allow(['index', 'view']);
+
+        $this->set('titulo', 'Produtos');
     }
 
     /**

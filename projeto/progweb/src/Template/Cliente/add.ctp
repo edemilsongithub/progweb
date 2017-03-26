@@ -4,8 +4,6 @@
   */
 ?>
 
-<h3><?= __('Cadastro') ?></h3>
-
 <div class="cliente form large-9 medium-8 columns content">
     <?= $this->Form->create($cliente) ?>
     <fieldset>
@@ -30,7 +28,6 @@
 <br />
 
 <style type="text/css">
-    h2.title.text-center {display: none; }
 
     .input.date.required select {
     width: 100px;

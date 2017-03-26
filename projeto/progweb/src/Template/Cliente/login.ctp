@@ -8,7 +8,6 @@
     <?= $this->Flash->render('auth') ?>
     <?= $this->Form->create() ?>
     <fieldset>
-        <legend><?= __('Login') ?></legend>
         <?php
             echo $this->Form->input('email');
             echo $this->Form->input('senha', ['label' => __('Senha'), 'type' => 'password']);

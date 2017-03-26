@@ -34,6 +34,8 @@ class ClienteController extends AppController
                 $this->Flash->error('Erro ao logar.', ['key' => 'auth']); 
             }
         }
+
+        $this->set('titulo', 'Entrar');
     }
 
     public function logout()
@@ -90,6 +92,8 @@ class ClienteController extends AppController
         }
         $this->set(compact('cliente'));
         $this->set('_serialize', ['cliente']);
+
+        $this->set('titulo', 'Cadastro');
     }
 
     /**

@@ -21,7 +21,7 @@
                 <td><?= $aluguel->produto->nome ?></td>
                 <td><?= h($aluguel->data_inicio) ?></td>
                 <td><?= h($aluguel->data_fim) ?></td>
-                <td><?= $this->Number->format($aluguel->preco_aluguel) ?></td>
+                <td>R$<?= $this->Number->format($aluguel->preco_aluguel) ?>,00</td>
                 <td class="actions">
                     <?= $this->Html->link(__('Detalhes'), ['action' => 'view', $aluguel->id]) ?>
                 </td>

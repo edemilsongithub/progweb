@@ -54,6 +54,9 @@ class ClienteController extends AppController
 
         $this->set(compact('cliente'));
         $this->set('_serialize', ['cliente']);
+
+
+        return $this->redirect(['controller' => 'Produto', 'action' => 'index']);
     }
 
     /**

@@ -4,7 +4,7 @@
   */
 ?>
 <div class="aluguel index large-9 medium-8 columns content">
-    <h3><?= __('Aluguel') ?></h3>
+    <h3><?= __('Aluguéis Ativos') ?></h3>
     <table class="table">
         <thead>
             <tr>

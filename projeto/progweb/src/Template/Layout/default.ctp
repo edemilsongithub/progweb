@@ -85,7 +85,7 @@ $cakeDescription = 'Toys - Locação de Produtos Infantis';
 								<?php if($usuario != null) : ?>
 
 								<li><a href="/aluguel"><i class="fa fa-shopping-cart"></i> Aluguéis</a></li>
-								<li><a href="#"><i class="fa fa-user"></i> <?= $usuario['nome'] ?></a></li>
+								<li><a href="/cliente/view/<?= $usuario['id'] ?>"><i class="fa fa-user"></i> <?= $usuario['nome'] ?></a></li>
 								<li><a href="/cliente/logout"><i class="fa fa-sign-out"></i> Sair</a></li>
 
 								<?php else: ?>

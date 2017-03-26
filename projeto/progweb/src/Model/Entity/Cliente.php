@@ -2,6 +2,7 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Cliente Entity
@@ -29,4 +30,21 @@ class Cliente extends Entity
         '*' => true,
         'id' => false
     ];
+
+    /**
+     * Fields that are excluded from JSON versions of the entity.
+     *
+     * @var array
+     */
+    protected $_hidden = [
+        'senha'
+    ];
+
+    protected function _setSenha($password)
+    {
+        if (strlen($password) > 0)
+        {
+            return (new DefaultPasswordHasher)->hash($password);
+        }
+    }
 }

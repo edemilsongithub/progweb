@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
+use Cake\Event\Event;
 
 /**
  * Categoria Controller
@@ -11,6 +12,13 @@ use Cake\ORM\TableRegistry;
  */
 class CategoriaController extends AppController
 {
+    /**
+     *  Middleware de ação antes da execução dos métodos
+     */ 
+    public function beforeFilter(Event $event) {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['view']);
+    }
 
     /**
      * Index method

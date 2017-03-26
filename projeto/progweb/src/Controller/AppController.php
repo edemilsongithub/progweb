@@ -44,6 +44,36 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authorize' => ['Controller'],
+            'authenticate' => [
+                'Basic' => ['userModel' => 'Cliente'],
+                'Form' => [
+                    'userModel' => 'Cliente',
+                    'fields' => [
+                        'username' => 'email',
+                        'password' => 'senha'
+                    ]
+                ]
+            ],
+            'loginAction' => [
+                'controller' => 'Cliente',
+                'action' => 'login'
+            ],
+            'authError' => 'Você precisa estar logado!',
+            'loginRedirect' => [
+                'controller' => 'Produto',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Produto',
+                'action' => 'index'
+            ],
+            'unauthorizedRedirect' => [
+                'controller' => 'Produto',
+                'action' => 'index'
+            ]
+        ]);
 
         /*
          * Enable the following components for recommended CakePHP security settings.
@@ -68,9 +98,18 @@ class AppController extends Controller
         }
 
         $categorias = TableRegistry::get('categoria')->find('all');
-        $usuario = TableRegistry::get('Cliente')->get(1);
 
         $this->set('categorias', $categorias);
-        $this->set('usuario', $usuario);
+    }
+
+    public function isAuthorized($user)
+    {
+        return true;
+    }
+
+    public function beforeFilter(Event $event)
+    {
+        $this->user = $this->Auth->user();
+        $this->set('usuario', $this->user);
     }
 }

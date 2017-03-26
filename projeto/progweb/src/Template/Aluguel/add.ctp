@@ -24,11 +24,11 @@ h2.title.text-center {
         <?php
             echo "<h4>Dados do Cliente</h4>";
 
-            echo "<p><strong>Nome: </strong> " . $usuario->nome . "</p>";
-            echo "<p><strong>E-mail: </strong> " . $usuario->email . "</p>";
-            echo "<p><strong>Endereço: </strong> " . $usuario->endereco . "</p>";
+            echo "<p><strong>Nome: </strong> " . $usuario['nome'] . "</p>";
+            echo "<p><strong>E-mail: </strong> " . $usuario['email'] . "</p>";
+            echo "<p><strong>Endereço: </strong> " . $usuario['endereco'] . "</p>";
 
-            echo $this->Form->input('id_cliente', ['type' => 'hidden', 'value' => $usuario->id]);
+            echo $this->Form->input('id_cliente', ['type' => 'hidden', 'value' => $usuario['id']]);
 
 
             echo "<br /><h4>Dados do Produto</h4>";

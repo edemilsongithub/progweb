@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Produto Controller
@@ -10,6 +11,13 @@ use App\Controller\AppController;
  */
 class ProdutoController extends AppController
 {
+    /**
+     *  Middleware de ação antes da execução dos métodos
+     */ 
+    public function beforeFilter(Event $event) {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['index', 'view']);
+    }
 
     /**
      * Index method
@@ -110,5 +118,10 @@ class ProdutoController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function isAuthorized($user)
+    {
+        return true;
     }
 }

@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Cliente Controller
@@ -10,6 +11,35 @@ use App\Controller\AppController;
  */
 class ClienteController extends AppController
 {
+    /**
+     *  Middleware de ação antes da execução dos métodos
+     */ 
+    public function beforeFilter(Event $event) {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['add', 'login']);
+    }
+
+    public function login()
+    {
+        if($this->request->is('post'))
+        {
+            $user = $this->Auth->identify();
+            if($user)
+            {
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            } 
+            else
+            {
+                $this->Flash->error('Erro ao logar.', ['key' => 'auth']); 
+            }
+        }
+    }
+
+    public function logout()
+    {
+        return $this->redirect($this->Auth->logout());
+    }
 
     /**
      * Index method

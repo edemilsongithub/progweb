@@ -81,15 +81,17 @@ $cakeDescription = 'Toys - Locação de Produtos Infantis';
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<?php if($usuario) : ?>
+								<li><a href="/pages/dicas"><i class="fa fa-star"></i> Dicas</a></li>
+								<?php if($usuario != null) : ?>
 
 								<li><a href="/aluguel"><i class="fa fa-shopping-cart"></i> Aluguéis</a></li>
-								<li><a href="#"><i class="fa fa-user"></i> <?= $usuario->nome ?></a></li>
-								<li><a href="/cliente/sair"><i class="fa fa-sign-out"></i> Sair</a></li>
+								<li><a href="#"><i class="fa fa-user"></i> <?= $usuario['nome'] ?></a></li>
+								<li><a href="/cliente/logout"><i class="fa fa-sign-out"></i> Sair</a></li>
 
 								<?php else: ?>
 
-								<li><a href="/cliente/entrar"><i class="fa fa-lock"></i> Entrar</a></li>
+								<li><a href="/cliente/login"><i class="fa fa-lock"></i> Entrar</a></li>
+								<li><a href="/cliente/add"><i class="fa fa-user"></i> Cadastrar</a></li>
 
 								<?php endif; ?>
 							</ul>
